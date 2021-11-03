@@ -1,0 +1,6 @@
+{
+    "ignore": [".git", "node_modules", "build"],
+    "watch": ["./src"], 
+    "exec": "npm run build && node ./build", 
+    "ext": "ts pug"
+  }
