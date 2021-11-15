@@ -6,6 +6,7 @@ interface todoItem{
 
 interface todoList{
     todos: todoItem[];
+    currentId: number;
     addTodo(text: string): void;
     toggleTodo(id: number): EventListener;
     clearCompleted: () => EventListener;
@@ -14,16 +15,21 @@ interface todoList{
 
 let todoList: todoList = {
     todos: [],
+    currentId: 0,
     addTodo(text: string){
         this.todos.push({
-            id: this.todos.length,
+            id: this.currentId,
             text: text,
             completed: false
         });
+        this.currentId++;
     },
     toggleTodo(id: number){
         let e: EventListener = (e: Event) => {
-            this.todos[id].completed = !this.todos[id].completed;
+            let todoItem: todoItem | undefined = this.todos.find(todo => todo.id === id);
+            if(todoItem){
+                todoItem.completed = !todoItem.completed;
+            }
             this.renderTodos();
         }
         return e;

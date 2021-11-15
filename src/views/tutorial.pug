@@ -6,11 +6,12 @@ block content
             h1 Tutorial 
             p Here we will cover some basic features of Typescript through a code review of a todo app written in Typescript! 
                 | The source code for this project can be found 
-                a(href="https://github.com/ibeale/ser421-project/tree/master/src/public/js") here.
+                a(href="https://github.com/ibeale/ser421-project/blob/master/src/public/js/todo.ts") here.
                 | This tutorial is meant to be an introduction to Typescript and expects you to have some knowledge of JavaScript.
                 | Furthermore, this is a Typescript tutorial, and not a tutorial on creating a To-do list application, so this tutorial 
                 | will not cover writing the To-do application, but instead use the application as an example of how Typescript can be utilized.
-                | Please pull the repository and follow along!
+                | Please open the link and follow along! The final result can be found in the  
+                a(href="/demo") Live Demo.
         hr
         .row 
             h1 Getting Started
@@ -106,13 +107,12 @@ block content
                 img(src='/images/addTodoIncorrect2.png' alt='addTodoError2')
         hr
         .row
-            .col-md-6
-                h2 Compiling the code
-                p Now that we've covered many of the main features that Typescript brings to the table, it's time to compile the code.
-                    | In order to compile your Typescript code, we need the tsc command. We can compile individual files with the command:
-                    | tsc {filename}. We can also compile all files in a directory with the command: tsc {directory}/*. For this project, 
-                    | we will use the --project option on the tsc command which will utilize the tsconfig.json file to compile the code.
-                    | More options can be found 
-                    a(href="https://www.typescriptlang.org/docs/handbook/compiler-options.html") here.
-                    | You can compare the compiled code to the original code where the .ts files are in the /src directory, and 
-                    | the compiled code is in the /build directory.
+            h2 Compiling the code
+            p Now that we've covered many of the main features that Typescript brings to the table, it's time to compile the code.
+                | In order to compile your Typescript code, we need the tsc command. We can compile individual files with the command:
+                | tsc {filename}. We can also compile all files in a directory with the command: tsc {directory}/*. For this project, 
+                | we will use the --project option on the tsc command which will utilize the tsconfig.json file to compile the code.
+                | More options can be found 
+                a(href="https://www.typescriptlang.org/docs/handbook/compiler-options.html") here.
+                | You can compare the compiled code to the original code where the .ts files are in the /src directory, and 
+                | the compiled code is in the /build directory.
