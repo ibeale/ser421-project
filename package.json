@@ -5,7 +5,7 @@
   "main": "build/index.js",
   "scripts": {
     "start": "npx nodemon",
-    "build": "npx tsc --project ./ && cp -R ./src/views ./build",
+    "build": "npx tsc --project ./ && cp -R ./src/views ./build && cp -R ./src/public/images ./build/public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
