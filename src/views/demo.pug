@@ -1,0 +1,12 @@
+extends layout.pug
+
+block content
+    .container
+        h1 Todo List
+            .row
+                ul(id="todoList")
+            .row
+                input(type="text", id="todoInput", placeholder="Add a todo")
+                button(id="addTodo") Add
+                button(id="clearCompleted") Clear completed
+    script(src="js/todo.js") 

@@ -2,9 +2,30 @@ extends layout.pug
 
 block content
     .container 
-        h1 Tutorial 
-        ol 
-            li
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis doloribus modi laboriosam, non minus sapiente labore repudiandae veniam neque eius?
-            li
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est voluptas quidem et velit, mollitia neque.
+        .row
+            h1 Tutorial 
+            p Here we will cover some basic features of Typescript through a code review of a todo app written in Typescript! 
+                | The source code for this project can be found 
+                a(href="https://github.com/ibeale/ser421-project") here
+        .row
+            .col-md-6
+                h2 Interfaces 
+                p Interfaces are a way to define the \"shape\" of an object. In vanilla Javascript, a developer can add and remove properties from an object as necessary. As a result, there may be situations where an object may not have a property a developer is expecting 
+                    | or may return a data type that the developer is not expecting. In order to implement this type checking, vanilla Javascript
+                    | requires explicit testing for each type. In Typescript, using interfaces allows these errors to be caught at compile time rather 
+                    | than runtime as we'll see in the next step.
+                    | In our example, we can see that an object defined as a todoList has a property called todos.
+                    | This property is an array of todoItem objects. In vanilla javascript, an array could contain 
+                    | many different types of objects, where in Typescript an array is limited to the types specified.
+            .col-md-6
+                img(src='/images/interfaces.png' alt='interfaces')
+        .row
+            .col-md-6
+                h2 Add Todo Function
+                p The add todo function takes text as input and appends a new todItem to the todoList array of todoItems.
+                    | You'll notice that while we can explicity create a new variable and label it as a todoList item, 
+                    | Typescript already knows that the todos property is an array of todoItem objects, so appending 
+                    | an anonymous object with the same properties as a todoItem will suffice.
+            .col-md-6
+                img(src='/images/addTodoCorrect.png' alt='addTodo')
+            
