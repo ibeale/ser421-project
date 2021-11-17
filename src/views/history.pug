@@ -3,31 +3,45 @@ extends layout.pug
 block content
     .container
         h1 TypeScript History
-
+        hr
         p
             |Before TypeScript, developers lacked advanced capabilities when creating large scale applications. Functionalities like static typing, classes and modularization were available in other languages like C++ and Java; but not JavaScript. After two years of implementation, Microsoft engineers released TypeScript in October 2012 (version 0.8) to address these limitations. 
             a(href='https://www.infoworld.com/article/2614863/microsoft-augments-javascript-for-large-scale-development.html') [1]
-
+        hr
         p 
             |TypeScript released version 0.9.0 in June 2013, which fixed many bugs and included performance benefits. This update also included an improved compiler for scaling web apps. One of the main added functionalities was the inclusion of generics. The inability to define types in APIs using placeholders was solved by the addition of generics that pleased many developers.
             a(href='https://www.theregister.com/2013/06/18/typescript_update_0_9/') [2]
-
+        hr
         p 
             |The landmark release of version 1.0.0 in April 2014 introduced TypeScript to one of the most popular editors, Visual Studio, as well as being its own npm package. TypeScript was now gaining traction as a legitimate JavaScript framework.
             a(href='https://devblogs.microsoft.com/typescript/announcing-typescript-1-0/') [3]
-
+        hr
         p 
             |Typescript 2.0.0 introduced a number of new features, but the primary one being the elimination of null references. Null references have been the cause of countless system crashes, vulnerabilities, and runtime errors that have cost billions of dollars in the history of computing. This new safeguard gained TypeScript mass support across Microsoft and Google.
             a(href='https://arstechnica.com/information-technology/2016/09/typescript-microsofts-javascript-for-big-applications-reaches-version-2-0/') [4]
-
+        hr
         p 
             |On July 2018, TypeScript reaches version 3.0. TypeScript 3.0 introduces a new concept of project references. Project references are a way for TypeScript projects to depend on other TypeScript projects using the tsconfig.json files. Specifying these dependencies allow improved organization and enable you to split your code into smaller componenets.
             a(href='https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html') [5]
-        
+        hr
         p 
             |On 20th August 2020, TypeScript reaches version 4.0. Added some additional language features like Variadic Tuple Types, Labeled Tuple Elements, Class Property Inference from Constructors, ect.
             a(href='https://devblogs.microsoft.com/typescript/announcing-typescript-4-0/') [6]
-        
+        hr
         p
 
         img(src='/images/timeline.jpg' alt='timeline' style='width:700px; height:520px;')
+        hr
+        p
+            |[1] "Microsoft augments JavaScript for large-scale development". InfoWorld. IDG. 1 October 2012. Retrieved 26 April 2015.
+            br
+            |[2] "TypeScript 0.9 arrives with new compiler, support for generics". The Register. 18 June 2013. Retrieved 26 April 2015.
+            br
+            |[3] Turner, Jonathan (2 April 2014). "Announcing TypeScript 1.0". TypeScript Language team blog. Microsoft. Retrieved 20 October 2021.
+            br
+            |[4] Bright, Peter (22 September 2016). "TypeScript, Microsoft's JavaScript for big applications, reaches version 2.0". Ars Technica. Condé Nast. Retrieved 22 September 2016.
+            br
+            |[5] "TypeScript 3.0". 30 July 2018. Retrieved 16 March 2020.
+            br
+            |[6] "Announcing TypeScript 4.0". TypeScript. 20 August 2020. Retrieved 30 October 2020.
+
