@@ -31,6 +31,10 @@ app.get('/demo', (req, res) => {
     res.render('demo')
 })
 
+app.get('/resource', (req, res) => {
+    res.render('resource')
+})
+
 app.listen(3000, () => {
     console.log('The application is listening on port 3000!');
 })
