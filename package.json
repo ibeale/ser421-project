@@ -4,7 +4,7 @@
   "description": "Typescript website for SER 421",
   "main": "build/index.js",
   "scripts": {
-    "start": "npx nodemon",
+    "start": "node ./build",
     "build": "npx tsc --project ./ && cp -R ./src/views ./build && cp -R ./src/public/images ./build/public",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
