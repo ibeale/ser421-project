@@ -1,0 +1,118 @@
+extends layout.pug 
+
+block content
+    .container 
+        .row
+            h1 Tutorial 
+            p Here we will cover some basic features of Typescript through a code review of a todo app written in Typescript! 
+                | The source code for this project can be found 
+                a(href="https://github.com/ibeale/ser421-project/blob/master/src/public/js/todo.ts") here.
+                | This tutorial is meant to be an introduction to Typescript and expects you to have some knowledge of JavaScript.
+                | Furthermore, this is a Typescript tutorial, and not a tutorial on creating a To-do list application, so this tutorial 
+                | will not cover writing the To-do application, but instead use the application as an example of how Typescript can be utilized.
+                | Please open the link and follow along! The final result can be found in the  
+                a(href="/demo") Live Demo.
+        hr
+        .row 
+            h1 Getting Started
+            p Typescript is a superset of Javascript, meaning you can create semantically identical code in Javascript and Typescript.
+                | Typescript is also a compiled language, unlike Javascript, which is interpreted. With a Typescript file, you can compile it to Javascript,
+                | that can then be run in a browser, or server. To get started, create a project folder and call "npm init", followed by 
+                | "npm install typescript --save-dev". Once typescript is installed, you should now run "npx tsc --init" which creates a tsconfig.json file,
+                | specifying various options that the typescript compiler will use. 
+                | Finally, to install other npm packages, be sure to also install the type definitions of the package as well. This is usally accomplished 
+                | by prepending "@types/" to the package name. For example, "@types/express" will install the type definitions for the express package.
+        hr
+        .row
+            .col-md-6
+                h2 Interfaces 
+                p Interfaces are a way to define the "shape" of an object. In vanilla Javascript, a developer can add and remove properties from an object as necessary. As a result, there may be situations where an object may not have a property a developer is expecting 
+                    | or may return a data type that the developer is not expecting. In order to implement this type checking, vanilla Javascript
+                    | requires explicit testing for each type. In Typescript, using interfaces allows these errors to be caught at compile time rather 
+                    | than runtime as we'll see in the next step.
+                    | In our example, we can see that an object defined as a todoList has a property called todos.
+                    | This property is an array of todoItem objects. In vanilla javascript, an array could contain 
+                    | many different types of objects, where in Typescript an array is limited to the types specified.
+            .col-md-6
+                img(src='/images/interfaces.png' alt='interfaces')
+        hr
+        .row 
+            .col-md-6 
+                h2 Variable assignment
+                p As discussed in the previous example, we can use interface names to define the shape of a variable.
+                    | The syntax requires a colon after the variable name and before the equals sign. In this example 
+                    | we are calling the method getElementById on the document object. As you may know, this method
+                    | may or may not return an object depending on the id passed in. Therefore, using the built in interface HTMLElement 
+                    | we can ensure that the variable contains the correct object type. Also in this example is a concept called 
+                    | type unions. Using the | symbol, we can combine multiple types into a single type. In this case, HTMLElement OR null.
+                    | In vanilla Javascript, a developer may forget to check whether getElementById returned an object or null and attempt to use it.
+                    | In which case, calling any methods or properties on the object will result in an error. In Typescript, this error will be caught at compile time.
+                    | An alternative to type declarations, Typescript also allows type inferencing to be used. This allows the compiler to infer the type of a variable based 
+                    | on it's assignment. Finally, we can also use the "any" type to allow any type to be assigned to a variable.
+            .col-md-6
+                img(src='/images/assignmentCorrect.png' alt='variable assignment')
+        br
+        .row 
+            .col-md-6 
+                h2 Incorrect variable assignment 
+                p In this example, we have removed the type union and tell Typescript to expect an HTMLElement object to be returned. 
+                    | Since getElementById returns an HTMLElement or null, VSCode displays an error saying that the value 
+                    | null cannot be assigned to a variable that is expecting an HTMLElement and nothing else.
+            .col-md-6
+                img(src='/images/assignmentIncorrect.png' alt='incorrect variable assignment')
+        hr
+        .row
+            .col-md-6 
+                h2 Type narrowing 
+                p Typescript also enables type narrowing! From the previous example, we have a variable named addTodoButton,
+                    | which can be an HTMLElement or null. Immediately afterwards, we check the truthiness of the variable using an if statement.
+                    | If the variable is truthy, we can find that inside the if statement the variable no longer has the null type in the type union.
+                    | There are many different ways to narrow the types down. More information can be found
+                    a(href="https://www.typescriptlang.org/docs/handbook/2/narrowing.html") here.
+            .col-md-6
+                .h5 Before type narrowing 
+                img(src='/images/narrowing2.png' alt='before type narrowing')
+                .h5 After type narrowing
+                img(src='/images/narrowing1.png' alt='after type narrowing')
+        hr
+        .row
+            .col-md-6
+                h2 Add Todo Function
+                p The add todo function takes text as input and appends a new todItem to the todoList array of todoItems.
+                    | You'll notice that while we can explicity create a new variable and label it as a todoList item, 
+                    | Typescript already knows that the todos property is an array of todoItem objects, so appending 
+                    | an anonymous object with the same properties as a todoItem will suffice.
+            .col-md-6
+                img(src='/images/addTodoCorrect.png' alt='addTodo')
+        br
+        .row
+            .col-md-6
+                h2 Creating an error in Add Todo Function
+                p In this example, I've commented out the "completed" property of the todoItem object.
+                    | Since Typescript understands that the todos array is made up of todoItem objects,
+                    | and that todoItem objects must have a "completed" property, this error will be caught at compile time.
+                    | In this tutorial, Visual Studio Code is used to view the errors.
+            .col-md-6
+                img(src='/images/addTodoIncorrect.png' alt='addTodoError1')
+        br
+        .row
+            .col-md-6
+                h2 Another error in the Add Todo Function
+                p In this example, we are attempting to assign a string to the id of the todoItem object.
+                    | Since the id property of a todoItem is a number, this error will also be caught at compile time.
+                    | In vanilla javascript, this error would instead be caught at runtime. Although vanilla Javascript uses 
+                    | type coersion: a bug like this may be difficult to spot in a large application. In general 
+                    | the goal of Typescript is to catch as many errors as possible at compile time.
+            .col-md-6
+                img(src='/images/addTodoIncorrect2.png' alt='addTodoError2')
+        hr
+        .row
+            h2 Compiling the code
+            p Now that we've covered many of the main features that Typescript brings to the table, it's time to compile the code.
+                | In order to compile your Typescript code, we need the tsc command. We can compile individual files with the command:
+                | tsc {filename}. We can also compile all files in a directory with the command: tsc {directory}/*. For this project, 
+                | we will use the --project option on the tsc command which will utilize the tsconfig.json file to compile the code.
+                | More options can be found 
+                a(href="https://www.typescriptlang.org/docs/handbook/compiler-options.html") here.
+                | You can compare the compiled code to the original code where the .ts files are in the /src directory, and 
+                | the compiled code is in the /build directory.

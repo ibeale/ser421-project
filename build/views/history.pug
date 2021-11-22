@@ -1,0 +1,47 @@
+extends layout.pug
+    
+block content
+    .container
+        h1 TypeScript History
+        hr
+        p
+            |Before TypeScript, developers lacked advanced capabilities when creating large scale applications. Functionalities like static typing, classes and modularization were available in other languages like C++ and Java; but not JavaScript. TypeScript is not inherently different or complex than from JavaScript; all TypeScript code converts to JavaScript. Therefore, all TypeScript code can run in the the browser by default. During development, a TypeScript developer would code in JavaScript, but use TypeScript features where necessary and the compiler converts that code to JavaScript. What makes TypeScript so powerful is it's debugging features and type-safe capabilities. After two years of implementation, Microsoft engineers released TypeScript in October 2012 (version 0.8) to address these limitations. 
+            a(href='https://www.infoworld.com/article/2614863/microsoft-augments-javascript-for-large-scale-development.html') [1]
+        hr
+        p 
+            |TypeScript released version 0.9.0 in June 2013, which fixed many bugs and included performance benefits. This update also included an improved compiler for scaling web apps. Compared to the 0.8 version of TypeScript, 0.9 addresses 150 issues regarding the old compiler; which involved problems with catching errors, better debugging tools and a better user experience. One of the main added functionalities was the inclusion of generics. The inability to define types in APIs involving inputs and outputs caused an outcry in the community. Introducing generics enabled richer type checking and cleaner error handling for developing tools. Another small feature was the implementation of overloading on constants; this gives more accurate type information for the DOM. Lastly, Microsft instroduced enums and declaration merging for this update. Enums offer the use of working with constant numeric data and declaration merging allows you to expand a class/function properties using the module type.
+            a(href='https://www.theregister.com/2013/06/18/typescript_update_0_9/') [2]
+        hr
+        p 
+            |The landmark release of version 1.0.0 in April 2014 introduced TypeScript to one of the most popular editors, Visual Studio, as well as being its own npm package. TypeScript was now gaining traction as a legitimate JavaScript framework.
+            a(href='https://devblogs.microsoft.com/typescript/announcing-typescript-1-0/') [3]
+        hr
+        p 
+            |Typescript 2.0.0 introduced a number of new features, but the primary one being the elimination of null references. Null references have been the cause of countless system crashes, vulnerabilities, and runtime errors that have cost billions of dollars in the history of computing. By adding the --strictNullChecks flag before compilation, TypeScript will now throw an error when encountering any null/undefined type. Another feature introduced in this update is the simplification of Declaration Files. This allows for better organization when managing file dependencies. An additional feature is the readonly modifier, TypeScript allows for types to be immutable by declaring the modifier readonly. With these new safeguards TypeScript has gained near two million active users compared to the community during version 1.0.0
+            a(href='https://arstechnica.com/information-technology/2016/09/typescript-microsofts-javascript-for-big-applications-reaches-version-2-0/') [4]
+        hr
+        p 
+            |On July 2018, TypeScript reaches version 3.0. TypeScript 3.0 introduces a new concept of project references. Project references are a way for TypeScript projects to depend on other TypeScript projects using the tsconfig.json files. Specifying these dependencies allow improved organization and enable you to split your code into smaller components. This update also includes extracting and spreading parameter lists with tuples. What this means is functions that use rest parameters were previously hard to statically type check against, but this update solves this problem. This update also redfined tuples to resemble a parameter list, rather than just a model for order and length. Also, this update comes with improved error and UX design. Error messages previously didn't give enough detail, but now include elaborate messages to help fix the cause. 
+            a(href='https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-0.html') [5]
+        hr
+        p 
+            |On 20th August 2020, TypeScript reaches version 4.0. This version includes variadic tuple types; this solves the problem with previous versions when trying to type functions with varying arguments. Labeled Tuple Elements have also been added; when typing tuples in TypeScript, you lose the functionality of naming your arguments. In this version you can now type tuples while also labling them. This version also includes Class Property Inference from constructors. Short-circuiting assignment operators have been added as well with this update. Catch clauses have been retyped from any to unknown to prevent any further errors. Version 4.0 improved speed with build mode and made editor improvements for developers using TypeScript Visual Studio. Optional Chaining has also been added. 
+            a(href='https://devblogs.microsoft.com/typescript/announcing-typescript-4-0/') [6]
+        hr
+        p
+
+        img(src='/images/timeline.jpg' alt='timeline' style='width:700px; height:520px;')
+        hr
+        p
+            |[1] "Microsoft augments JavaScript for large-scale development". InfoWorld. IDG. 1 October 2012. Retrieved 26 April 2015.
+            br
+            |[2] "TypeScript 0.9 arrives with new compiler, support for generics". The Register. 18 June 2013. Retrieved 26 April 2015.
+            br
+            |[3] Turner, Jonathan (2 April 2014). "Announcing TypeScript 1.0". TypeScript Language team blog. Microsoft. Retrieved 20 October 2021.
+            br
+            |[4] Bright, Peter (22 September 2016). "TypeScript, Microsoft's JavaScript for big applications, reaches version 2.0". Ars Technica. Condé Nast. Retrieved 22 September 2016.
+            br
+            |[5] "TypeScript 3.0". 30 July 2018. Retrieved 16 March 2020.
+            br
+            |[6] "Announcing TypeScript 4.0". TypeScript. 20 August 2020. Retrieved 30 October 2020.
+

@@ -1,0 +1,29 @@
+extends layout.pug
+    
+block content
+    .container
+        h1 Analysis of TypeScript
+        p Javascript is an incredibly lenient programming language. If a developer writing JavaScript code mistypes an object property, JavaScript will faithfully attempt to evaluate anyway. If the evaluation fails, a possible result is the vague “Uncaught TypeError: Cannot read property of undefined” error at runtime. If this error makes it into production uncaught, the results may be disastrous leaving a developer scratching their head wondering how TodoItem.compelted was set to undefined when in reality they simply mistyped “completed”. Other language features such as the weak dynamic typing and type coercion can compound these errors and further obfuscate an error. 
+            a(href='https://dev.to/aspittel/oops-i-did-it-again-a-guide-to-common-javascript-errors-28e7') [1]
+            br
+            br
+            | Typescript is a programming language that is a superset of Javascript, which attempts to remedy these issues within Javascript. Being a superset, all valid Javascript code is also valid Typescript code. However, in addition to everything that Javascript already brings to the table, Typescript provides optional strong and static typing and is compiled to vanilla Javascript. Strong typing means that once a variable is assigned to a type (e.g. let x = 3), it cannot be reassigned to a different type (e.g. x = “3”). On the other hand, static typing requires that types are checked at compile time therefore catching type errors earlier in the development lifestyle. At a high level, the typechecking system is the heart and soul of Typescript. In the following section, we will express our opinion on Typescript as a language and discuss the benefits and drawbacks of Typescript as a programming language.
+            a(href='https://www.sitepoint.com/introduction-to-typescript/') [2]
+            br
+            br
+            | In general the team believes that Typescript is a great tool with many great benefits and very few drawbacks. One of the downsides we found with Typescript is that it tends to add a small amount of development overhead in order to implement typechecking. From the point of view of a seasoned Javascript developer learning Typescript, one may find that the type annotations reduce readability and require more time to write code since the developer has to consider every type that a variable may hold. However, we found that this time is not lost – it is instead traded for safety during runtime. The extra time and effort annotating types in a Typescript file, is saved in debugging hours after the software is pushed into production. As most software engineers will tell you, software tends to spend a lot more time in the maintenance stage of the development lifecycle than any other stage. Therefore, time saved in the maintenance stage is arguably more valuable to a company. Of course, this scenario only applies to developers who are beginning a project and must decide between Javascript and Typescript, but what about converting a Javascript codebase to Typescript? While this would take a significant amount of time, converting from Javascript to Typescript is much easier than converting from, say, Javascript to Python. With a multiple file Javascript project, each file can individually be converted from .js to .ts since all valid JS is valid TS. From there, a developer can add strict type checking, and each new TS file can be compiled separately, replacing their original JS counterpart. Therefore the conversion can be done incrementally significantly reducing the negative effects of conversion by amortizing the effort over time. 
+            a(href='http://codebetter.com/derikwhittaker/2014/04/05/how-does-typescript-help-prevent-bugs-in-javascript/') [3]
+            br
+            br
+            | Although this effort can be amortized, it is still true that conversion requires a lot more effort than simply beginning a project in Typescript, so the same criteria used for a new project cannot be reused for a project conversion. This is where another great benefit of static type checking: IDE warnings. Due to static typechecking, editors such as VSCode can highlight more errors in your code for you. As discussed previously, this will allow developers to catch errors earlier in the development lifecycle. As an added benefit, refactoring and adding new features becomes faster in Typescript as well. While refactoring code, for example, changing the return type of a function, simply rewriting the function will cause editor errors to pop up everywhere the function was called if type annotations were used. A developer can use these errors to essentially allow their editor to walk them through the refactoring process, highlighting each place where the surrounding code has not been refactored to work with the new code. This situation must also be considered when considering TS versus JS, and our team believes that even in the conversion scenario, the benefits of TS outweigh the drawbacks. 
+            a(href='https://medium.com/webpack/unambiguous-webpack-config-with-typescript-8519def2cac7') [4]
+
+        hr
+        p
+            |[1] Spittel, Ali, "Oops, I did it again: A guide to debugging common JavaScript errors" dev.to, dev.to, 23 Jan. 2019.
+            br
+            |[2] Houwens, Byron. “An Introduction to Typescript: Static Typing for the Web.” SitePoint, SitePoint, 22 Apr. 2018.
+            br
+            |[3] Whittaker, Derik. “How Does Typescript Help Prevent Bugs in JavaScript.” CodeBetter.Com - Stuff You Need to Code Better!. 
+            br
+            |[4] Zuegel, Devon. “Typescript Programming with Visual Studio Code.” Medium, Medium, 3 Nov. 2021. 
