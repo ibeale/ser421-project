@@ -25,3 +25,6 @@ dependencies are listed in the package.json file. In order to install all depend
 If the build directory is present: To run the application, type `npm start` in the root directory.
 
 If the build directory is not present for some reason: build the application using `npm run build` in the root directory before using `npm start` to run the application.
+
+## Video link
+https://www.youtube.com/watch?v=zXD2DTIbOeM
